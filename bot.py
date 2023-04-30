@@ -29,3 +29,6 @@ async def self(interaction: discord.Interaction):
                                             'I will take your list and make a decision for you.')
 
 
+
+
+bot.run(secret_code)
