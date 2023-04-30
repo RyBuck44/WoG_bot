@@ -1,3 +1,5 @@
+import random
+
 import discord
 from discord import app_commands
 from discord.ext import commands
@@ -29,6 +31,14 @@ async def self(interaction: discord.Interaction):
                                             'I will take your list and make a decision for you.')
 
 
+@tree.command(name='spin', description='prompts user to enter list of games, then will select and display one',
+              guild=discord.Object(id=1100490695309017168))
+async def self(interaction: discord.Interaction, games:str):
+    all_games = games.split(',')
+    the_game = random.choice(all_games)
+    await interaction.response.send_message(f'Games you enterd : {games}\n'
+                                            f'After some serious thought I think you should play: {the_game}\n'
+                                            f'Have fun!')
 
 
 bot.run(secret_code)
