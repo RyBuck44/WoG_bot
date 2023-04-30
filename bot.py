@@ -20,3 +20,12 @@ class db(discord.Client):
 
 bot = db()
 tree = app_commands.CommandTree(bot)
+
+
+@tree.command(name='help', description='provides information about bot function', guild=discord.Object(id=1100490695309017168))
+async def self(interaction: discord.Interaction):
+    await interaction.response.send_message('PLease enter all the games you are willing to play.\n'
+                                            'Use a comma (,) to separate them.\n'
+                                            'I will take your list and make a decision for you.')
+
+
