@@ -37,8 +37,12 @@ async def self(interaction: discord.Interaction, games:str):
     all_games = games.split(',')
     the_game = random.choice(all_games)
     await interaction.response.send_message(f'Games you enterd : {games}\n'
-                                            f'After some serious thought I think you should play: {the_game}\n'
+                                            f'After some serious thought I think you should play {the_game}!\n'
                                             f'Have fun!')
 
 
-bot.run(secret_code)
+def run_WoG_bot():
+    bot.run(secret_code)
+
+
+run_WoG_bot()
